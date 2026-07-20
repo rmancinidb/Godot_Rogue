@@ -1,0 +1,31 @@
+Instala VScode 
+Instala GitHub de aca
+
+- git-scm.com
+
+ --- cuando instales puedes cambiar el editor por defecto a vscode, funciona re bien
+
+
+Abre VS code
+
+Pesttana arriba a la derefcha - terminal - new terminal
+escribe git --version y comprueba que este instalado
+
+
+en vs code anda a la pesta;a de mas abajo a la izquierda (son como simbolitos) uno son 4 cuadrados con uno torido (extensoiones)
+apreta ahi y en el buscador que aparece a la izquierda escribe GitHub. y pone instalar al que se llama
+GithUB PULL REQUEST (abajito de la opcioon a la izquierda) 
+
+
+despues de instalado te deberia salir la silueta de un gatito. apreta ahi. arriba en azul deberias tener la opcion de sign in.
+para sincronizasrlo con tu GitHub
+
+ahora anda a source controil tb a la izqueirda, uno de los iconos como 3 puntos conectados y pone open fodler, te deberia hacer loginiar
+en GitHub tb pero desde la tab de arriba. 
+
+
+ahora abre este link
+https://github.com/rmancinidb/Godot_Rogue.git
+
+
+a la ziqueirda en als 3 pelotitas source control, apremna clone repository. ahi pone https://github.com/rmancinidb/Godot_Rogue.git
