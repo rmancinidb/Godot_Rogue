@@ -1,6 +1,9 @@
 Instala VScode 
 Instala GitHub de aca
 
+pico pal que lee
+
+
 - git-scm.com
 
  --- cuando instales puedes cambiar el editor por defecto a vscode, funciona re bien
