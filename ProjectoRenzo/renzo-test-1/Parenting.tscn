@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vvotc8ufxkqw"]
+
+[ext_resource type="Texture2D" uid="uid://s51rvlir53mo" path="res://Intro to Godot - Assets/Sprites/Player.png" id="1_f0kcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mrfd"]
+size = Vector2(71.07001, 70.83875)
+
+[node name="Main" type="Node2D" unique_id=1098256463]
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1304352506]
+position = Vector2(232.99998, 153)
+rotation = -0.017038282
+texture = ExtResource("1_f0kcx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1932473165]
+position = Vector2(-0.50001526, 0.022766113)
+rotation = -3.1415925
+scale = Vector2(0.97087353, -1.2980814)
+shape = SubResource("RectangleShape2D_1mrfd")
