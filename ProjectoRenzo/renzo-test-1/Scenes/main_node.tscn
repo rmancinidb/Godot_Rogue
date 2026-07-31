@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dudh1c32retyn"]
 
-[ext_resource type="Texture2D" uid="uid://s51rvlir53mo" path="res://Intro to Godot - Assets/Sprites/Player.png" id="1_lwogq"]
-[ext_resource type="PackedScene" uid="uid://piajsolr1kd2" path="res://coin.tscn" id="2_dhalm"]
+[ext_resource type="Texture2D" uid="uid://s51rvlir53mo" path="res://Sprites/Player.png" id="1_lwogq"]
+[ext_resource type="PackedScene" uid="uid://piajsolr1kd2" path="res://Scenes/coin.tscn" id="2_dhalm"]
 
 [node name="MainNode" type="Node2D" unique_id=964115495]
 position = Vector2(-112, -141)
