@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://unmrvtbrs16i"]
-
-[ext_resource type="Script" uid="uid://b6t75gut1q6av" path="res://Scripts/intro_scrypting.gd" id="1_u6ylh"]
-
-[node name="Main" type="Node2D" unique_id=1709316120]
-script = ExtResource("1_u6ylh")

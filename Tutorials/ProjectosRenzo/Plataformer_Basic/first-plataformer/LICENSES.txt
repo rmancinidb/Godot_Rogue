@@ -1,0 +1,17 @@
+# Third Party Asset Licenses
+
+Some of the assets provided in this course are subject to third-party licenses:
+
+===================================
+
+Characters, objects, and tiles
+Created by Kenney
+Source: https://kenney.nl/assets/pixel-platformer
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+----------
+
+Backgrounds
+Created by Kenney
+Source: https://kenney.nl/assets/background-elements-redux
+License Info: Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
