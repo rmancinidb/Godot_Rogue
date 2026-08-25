@@ -7,7 +7,7 @@
 position = Vector2(-112, -141)
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1354317160]
-position = Vector2(624, 434)
+position = Vector2(384, 424)
 texture = ExtResource("1_lwogq")
 
 [node name="Coin" parent="." unique_id=1760569286 instance=ExtResource("2_dhalm")]
