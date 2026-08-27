@@ -1,0 +1,6 @@
+'Resources': Son elementos utiles que puede ser usados como variable3s globales para los nodos. 
+
+
+Para eliminar el smoothnes de los pixeles (para hacer que pixel art se vea bien):
+
+	- project -> Project settings -> Rendering -> textures -> cambiar linear a Nearest
