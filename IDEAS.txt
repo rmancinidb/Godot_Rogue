@@ -1,0 +1,68 @@
+
+------------------------------------
+IDEAS FRANCO
+
+PRIMER JUEGO A DESARROLLAR
+
+Estilo: 
+Arcade, rougeLIKE, por oleadas, sencillo, fastpased. 
+
+Hacer copia skul (visual y jugabilidad) y modificar acorde. 
+El personaje puede ser un metalero enojado golpeado oficinistas, luego robots, luego el infierno y el jefe un simil a trump y musk version robot.
+2d rogue-lite fighter platformer coop
+A jugar directo, sin tutoriales ni comienzos largos. Se empieza y sale un recuadro con los botones con que se juega y ya.
+Jugabilidad simple y facil de leer. Habilidas y upgrades directas, poco texto. 
+Version celular "pocket", el mono pega solo, no solo controla el movimiento y un boton para saltar y hacer dogde (salto + flecha hacia abajo)
+Estilo dead cells, the messenger
+Estetica The eternal life of goldman, similar a dead cells tb, oscuro con pocos colores. El personaje principal q sea una especie de sombra con algunos elementos estetico de colores. Estetica como Fallen tear: the ascension, NEVA, wild robot. 
+Historia: Personaje ve las noticias, el caos las guerras y se enoja y decide tomar la solucion en sus propias manos. Viaje pegandole a todo lo que se le cruza en direccion al infierno (sentido figurado, hacerlo de forma que el camino al infierno sea a traves de la industria coorporativa y infierno se interprete como estados unidos y el demonio como trump o algo similar)
+
+Primero para steam y luego modificable para switch o android.
+Para android desarrollar juego con solo un boton?
+Lo principal es hacer algo sin tanto contenido q sea realizable como primer projecto.
+Te lanzan a un calabozo y la idea es avanzar para lograr escapar.
+
+Movimiento + 4 botones, ataque, salto, dash y poder especial.
+Lograr hacer que el movimiento sea fluido, que haya conservacion de movimiento y momentum, al dashear y deslizar que no se pierda velocidad, si uno luego salta y vuelve a dashear q mantenga la velocidad. Que el jugador pueda mejorar y perfeccionar el movimiento, que parte de la gracia del juego sea este movimiento y como uno pelea usando los movimientos rapidos y el dasheo. 
+
+Partes con puños, se pueden recoger armas de distintos estilos (limitar a 2, espada y hacha x ej)
+Inventarios con 1 item y un poder intercambiable (2 en total, uno activo y uno en reserva). Incorporar equipamiento, armaduras y etc, unos 5 elementos en total, tal vez se pueden recolectar al terminar cada partida y se equipan al comenzar. Posibilidad para hacer builds.
+
+A medida q se avanza se lucha contra monstruos luego algun jefe, hasta q se llega a la zona de la escotilla donde te lanzaron hacia abajo, aqui se pelea contra los guardias, luego se avanza entre las celdas peleando contra guardias mas fuertes. El resto de los prisionaeros te alientan de las celdas para dar atmósfera al juego. Finalmente se pelea contra la guardia final para escapar.
+La duracion total de una partida debe ser entre 20 a 30 mins. Luego se va subiendo el nivel de dificultad en nuevas partidas, nuevos enemigos, algo mas de historia.
+Que el personaje represente a un prisionero estandar, podria ser cualquiera. A medida q se van ganando niveles la historia evoluciona en q efectivamentw hay prisioneros q se estan escapando por lo q las medidas de seguridad van incrementando. El juego termina cuando se terminan de escapar los prisioneros (en la zona de celdas se puede mostrar q cada vez se van vaciando un poco). Hacer un jefe final especial para terminar el juego.
+
+Modo endless arena
+Agregar habilidades especiales como  detener el tiempo, super criticos, etc. en celular se pueden activar manteniendo presionado el boton de ataque por 3 seg
+
+Eventualmente para celular se puede monetizar cobrando por armas nuevas, poderes nuevos, personajes nuevos, mas niveles, elementos esteticos extra. 
+
+Modo supervivencia - Sobrevivir oleadas infinitas para hacer records
+
+Estilo narrativo como broforce
+Por ejemplo al llegar al final y pelear contra el diablo, el pj llega pateando una puerta y diciendo, im here to kick your ass. Mostrar imagen del diablo en primera persona con exclamacion sorprendido y luego al pj con cara de rudo.
+
+Referencias 
+Estilo grafico como skul, astral asecent o nine sols. 
+GAMEPLAY:
+Astral ascent, Wizard of legend, skul
+Ants took my eyeball
+
+Items/partes/poderes separados en comunes, raros y legendarios:
+comunes son los mas abundantes con efectos directos sencillos como +attackspeed
+Los legendarios son elementos que cambian el estilo de la build. 
+
+Alternativa
+estilo Medabots para rougelite. (buscar ref medabots)
+(dependiendo del tipo, fuego o que se yo, se desbloqueand distintos caminos para avanzar, fuego derrite hielo por ejemplo). La logica del roguelite seria q si te destruyen vuelves al comienzo y te reparan para volver a intentarlo. Control de las maquinas, robot rebelde aliado de los humanos. 
+Por ejemplo los enemigos te botan sus partes para usarlas uno luego.
+
+Item drop como diablo 2
+Enemigos botan oro y objetos
+Los objetos se dropean aleatorio y su stats tb
+
+looter roguelike? Puedes ir armando tu propio set de armaduras y armas y vendiendo para craftear y reparar (como diablo subes de nivel y tienes equipment con combinaciones). Para ganar los modos mas dificiles el jugador tiene q descubrir combinaciones rotas.
+
+
+
+----------------------------------------------------
