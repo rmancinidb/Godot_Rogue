@@ -8,11 +8,24 @@ extends CharacterBody2D
 @export var jump_force : float = 300.0          # → upward impulse on jump
 @export var normal_friction : float = 1         # → default friction for normal ground
 
+@export var health : int = 3
+
 var move_input : float                          # → -1 (left), 0 (idle), or +1 (right)
 
-
+#onready means when the game start
+@onready var sprite : Sprite2D = $sprite
+@onready var anim : AnimationPlayer = $AnimationPlayer
 # independet of the frame per second (make physics consistent)
 func _physics_process(delta: float) -> void:
+
+	# ---------- gravity and floor conditions ----------
+	# I like to use the built-in function get_gravity:
+	#   global magnitude:  ProjectSettings.set_setting("physics/2d/default_gravity", 1500.0)
+	#   global direction:  ProjectSettings.set_setting("physics/2d/default_gravity_vector", Vector2(0, -1))
+	#   local override:    multiply get_gravity() by a factor (like below)
+	if not is_on_floor():
+		velocity += get_gravity() * delta * gravity_multiplier   # → only pull down while airborne
+
 
 	# ---------- friction elements ----------
 	var current_friction: float = normal_friction   # → assume normal ground first
@@ -43,14 +56,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, (braking * current_friction) * delta)
 
 
-	# ---------- gravity and floor conditions ----------
-	# I like to use the built-in function get_gravity:
-	#   global magnitude:  ProjectSettings.set_setting("physics/2d/default_gravity", 1500.0)
-	#   global direction:  ProjectSettings.set_setting("physics/2d/default_gravity_vector", Vector2(0, -1))
-	#   local override:    multiply get_gravity() by a factor (like below)
-	if not is_on_floor():
-		velocity += get_gravity() * delta * gravity_multiplier   # → only pull down while airborne
-
 
 	# ---------- jumping ----------
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -60,6 +65,36 @@ func _physics_process(delta: float) -> void:
 	# this one actually makes the character move:
 	# takes the velocity vector and handles collision detection
 	move_and_slide()
+
+## FUNCTIONS
+
+# _proccess is a built-in virtual method in Godot that runs every single frame
+func _process(delta):
+	#it is true or false
+	if velocity.x !=0 :
+		sprite.flip_h = velocity.x > 0
+		
+	_manage_animation()	
+
+#it need to be called in the procces function
+func _manage_animation ():
+	if not is_on_floor():
+		anim.play("jump")
+	elif move_input !=0:
+		anim.play("one_move")
+	else:
+		anim.play('idle')
+	
+func take_damage (amount : int):
+	health -= amount
+	
+	if health <= 0:
+		#call_deferred wait until the fram is ended
+		call_deferred("game_over")
+		
+func game_over ():
+	get_tree().change_scene_to_file("res://Scene/level1.tscn")
+	
 
 
 # ---------- Helper: read the friction of the tile we're standing on ----------
