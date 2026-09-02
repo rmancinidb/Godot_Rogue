@@ -96,6 +96,9 @@ func game_over ():
 	get_tree().change_scene_to_file("res://Scene/level1.tscn")
 	
 
+func increase_score (amount : int):
+	PlayerStats.score += amount
+	print(PlayerStats.score)
 
 # ---------- Helper: read the friction of the tile we're standing on ----------
 func get_floor_tile_friction() -> float:

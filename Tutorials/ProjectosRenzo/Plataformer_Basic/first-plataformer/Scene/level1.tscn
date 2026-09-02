@@ -4,6 +4,8 @@
 [ext_resource type="TileSet" uid="uid://d3nw7bautxov6" path="res://Sprites/Tiles/new_tile_set.tres" id="2_txmc1"]
 [ext_resource type="PackedScene" uid="uid://dbadmkddmylwe" path="res://Scene/player.tscn" id="3_txmc1"]
 [ext_resource type="PackedScene" uid="uid://cgrg58xmbqv55" path="res://Scene/enemy.tscn" id="4_m1xhl"]
+[ext_resource type="PackedScene" uid="uid://dobs1xkkknadi" path="res://Scene/end_flag.tscn" id="4_xhqo6"]
+[ext_resource type="PackedScene" uid="uid://bpxb16jweuymi" path="res://Scene/coin.tscn" id="5_b0lfo"]
 
 [node name="Main" type="Node2D" unique_id=21456225]
 
@@ -20,11 +22,42 @@ tile_set = ExtResource("2_txmc1")
 [node name="Player" parent="." unique_id=1973142069 instance=ExtResource("3_txmc1")]
 position = Vector2(39, 18)
 
-[node name="Enemy" parent="." unique_id=495046656 instance=ExtResource("4_m1xhl")]
+[node name="EndFlag" parent="." unique_id=989404416 instance=ExtResource("4_xhqo6")]
+position = Vector2(693, -9)
+scent_to_load = ExtResource("3_txmc1")
+
+[node name="Coins" type="Node" parent="." unique_id=559080063]
+
+[node name="coin" parent="Coins" unique_id=638695102 instance=ExtResource("5_b0lfo")]
+position = Vector2(118, 10)
+
+[node name="coin2" parent="Coins" unique_id=1000728179 instance=ExtResource("5_b0lfo")]
+position = Vector2(185, -10)
+
+[node name="coin6" parent="Coins" unique_id=878254542 instance=ExtResource("5_b0lfo")]
+position = Vector2(639, -10)
+
+[node name="coin5" parent="Coins" unique_id=274324350 instance=ExtResource("5_b0lfo")]
+position = Vector2(459, -64)
+
+[node name="coin4" parent="Coins" unique_id=1411583779 instance=ExtResource("5_b0lfo")]
+position = Vector2(352, -10)
+
+[node name="coin3" parent="Coins" unique_id=2040909572 instance=ExtResource("5_b0lfo")]
+position = Vector2(244, -26)
+
+[node name="Enemys" type="Node" parent="." unique_id=637754280]
+
+[node name="Enemy" parent="Enemys" unique_id=495046656 instance=ExtResource("4_m1xhl")]
 position = Vector2(143, 29)
 
-[node name="Enemy2" parent="." unique_id=468422391 instance=ExtResource("4_m1xhl")]
+[node name="Enemy2" parent="Enemys" unique_id=468422391 instance=ExtResource("4_m1xhl")]
 position = Vector2(260, 20)
 
-[node name="Enemy3" parent="." unique_id=1476563479 instance=ExtResource("4_m1xhl")]
+[node name="Enemy3" parent="Enemys" unique_id=1476563479 instance=ExtResource("4_m1xhl")]
 position = Vector2(377, 12)
+
+[node name="Enemy4" parent="Enemys" unique_id=637035409 instance=ExtResource("4_m1xhl")]
+position = Vector2(601, -24)
+
+[connection signal="body_entered" from="Coins/coin" to="Player" method="_on_coin_body_entered"]

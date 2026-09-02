@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bpxb16jweuymi"]
+
+[ext_resource type="Script" uid="uid://c5816gwakpj7d" path="res://Scripts/coin.gd" id="1_5e757"]
+[ext_resource type="Texture2D" uid="uid://ctym5qfqbvrdt" path="res://Sprites/Objects/tile_0151.png" id="2_1g4lx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mrfd"]
+radius = 6.0
+
+[node name="coin" type="Area2D" unique_id=638695102]
+script = ExtResource("1_5e757")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=594738541]
+texture = ExtResource("2_1g4lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070354643]
+shape = SubResource("CircleShape2D_1mrfd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
