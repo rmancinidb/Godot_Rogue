@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+
+#create signals, a more global condition
+signal OnUpdateHealt (healt: int)
+signal OnUpdateScore (score : int)
+
 # ---------- Tunable values (show up in the Inspector) ----------
 @export var move_speed : float = 200.0          # → top horizontal speed
 @export var acceleration : float = 600          # → how fast we reach move_speed
@@ -8,13 +13,20 @@ extends CharacterBody2D
 @export var jump_force : float = 300.0          # → upward impulse on jump
 @export var normal_friction : float = 1         # → default friction for normal ground
 
-@export var health : int = 3
+#@export var health : int = 3
 
 var move_input : float                          # → -1 (left), 0 (idle), or +1 (right)
 
 #onready means when the game start
 @onready var sprite : Sprite2D = $sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
+
+#this is for the sound effects
+@onready var audio : AudioStreamPlayer2D = $AudioStreamPlayer
+
+var take_damage_sfx: AudioStream = preload("res://Audio/take_damage.wav")
+var coin_sfx : AudioStream = preload("res://Audio/coin.wav")
+
 # independet of the frame per second (make physics consistent)
 func _physics_process(delta: float) -> void:
 
@@ -73,6 +85,9 @@ func _process(delta):
 	#it is true or false
 	if velocity.x !=0 :
 		sprite.flip_h = velocity.x > 0
+	
+	if global_position.y > 200:
+		game_over()
 		
 	_manage_animation()	
 
@@ -86,19 +101,38 @@ func _manage_animation ():
 		anim.play('idle')
 	
 func take_damage (amount : int):
-	health -= amount
+	PlayerStats.health -= amount
+	#this will emit the signal, when the condition is met
+	OnUpdateHealt.emit(PlayerStats.health) 
+	_damage_flash()
+	play_sound(take_damage_sfx)
 	
-	if health <= 0:
+	if PlayerStats.health <= 0:
 		#call_deferred wait until the fram is ended
 		call_deferred("game_over")
 		
 func game_over ():
-	get_tree().change_scene_to_file("res://Scene/level1.tscn")
+	get_tree().change_scene_to_file("res://Scene/game_over.tscn")
 	
 
 func increase_score (amount : int):
+	#here player stats is a global node I create before, independnt of the scene
 	PlayerStats.score += amount
-	print(PlayerStats.score)
+	OnUpdateScore.emit(PlayerStats.score)
+	play_sound(coin_sfx)
+
+
+#my function to show damage
+func _damage_flash ():
+	sprite.modulate = Color.RED
+	#this basically make a wait of 0.05 to keep the colour
+	await get_tree().create_timer(0.05).timeout
+	sprite.modulate = Color.WHITE
+
+func play_sound(sound: AudioStream):
+	audio.stream = sound
+	audio.play()
+
 
 # ---------- Helper: read the friction of the tile we're standing on ----------
 func get_floor_tile_friction() -> float:

@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c68luhs2q1d0e"]
+
+[ext_resource type="Script" uid="uid://deolfiaiwdelq" path="res://Scripts/game_over.gd" id="1_lwxdm"]
+[ext_resource type="Texture2D" uid="uid://ctrhnbyeh07q2" path="res://Sprites/Backgrounds/backgroundForest.png" id="2_mjsgh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1mrfd"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lwxdm"]
+font_size = 28
+font_color = Color(0.18, 1, 0.18, 1)
+
+[node name="GameOver" type="Control" unique_id=406182435]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwxdm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=514649417]
+modulate = Color(1, 0.68, 0.68, 1)
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("2_mjsgh")
+
+[node name="Label(GameOver)" type="Label" parent="." unique_id=1335396467]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -150.0
+offset_right = 359.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game over
+(Good try =D)"
+label_settings = SubResource("LabelSettings_1mrfd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button (replay)" type="Button" parent="." unique_id=78978511]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.967773
+offset_top = 88.25
+offset_right = 45.967773
+offset_bottom = 135.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Replay"
+
+[node name="Button2 (quit)" type="Button" parent="." unique_id=320075433]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.967773
+offset_top = 152.25
+offset_right = 45.967773
+offset_bottom = 199.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
+"
+
+[node name="Label(score)" type="Label" parent="." unique_id=1877880863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -91.5
+offset_right = 60.5
+offset_bottom = -52.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score = 0"
+label_settings = SubResource("LabelSettings_lwxdm")
+
+[connection signal="pressed" from="Button (replay)" to="." method="_on_button_replay_pressed"]
+[connection signal="pressed" from="Button2 (quit)" to="." method="_on_button_2_quit_pressed"]
