@@ -5,21 +5,95 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1mrfd"]
 radius = 6.0
-height = 34.0
+height = 31.0
+
+[sub_resource type="Animation" id="Animation_40svl"]
+resource_name = "Jump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/LegsSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
+}
+
+[sub_resource type="Animation" id="Animation_al8ar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/LegsSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_gy20a"]
+resource_name = "Run"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/LegsSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29, 30, 31, 32]
+}
+
+[sub_resource type="Animation" id="Animation_cqrjx"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/LegsSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khnq4"]
+_data = {
+&"Jump": SubResource("Animation_40svl"),
+&"RESET": SubResource("Animation_al8ar"),
+&"Run": SubResource("Animation_gy20a"),
+&"idle": SubResource("Animation_cqrjx")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=10656785]
 script = ExtResource("1_40svl")
+metadata/_edit_vertical_guides_ = [-16.0]
+metadata/_edit_horizontal_guides_ = [15.0]
 
 [node name="Sprite" type="Node2D" parent="." unique_id=367824372]
 
 [node name="TorsoSprite" type="Sprite2D" parent="Sprite" unique_id=676561494]
-position = Vector2(0, -9)
+position = Vector2(0, -8)
 texture = ExtResource("1_3etf2")
 hframes = 8
 vframes = 5
 
 [node name="LegsSprite" type="Sprite2D" parent="Sprite" unique_id=554722202]
-position = Vector2(0, -6)
+position = Vector2(0, -7)
 texture = ExtResource("1_3etf2")
 hframes = 8
 vframes = 5
@@ -30,3 +104,6 @@ shape = SubResource("CapsuleShape2D_1mrfd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=583082637]
 zoom = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2047035863]
+libraries/ = SubResource("AnimationLibrary_khnq4")
