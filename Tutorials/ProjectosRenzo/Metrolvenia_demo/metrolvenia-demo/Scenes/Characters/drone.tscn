@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b2nvy7d1ptka0"]
+
+[ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://graphics/characters/drone.png" id="1_kpcib"]
+[ext_resource type="Script" uid="uid://dfltp63ywpcvh" path="res://Scenes/Characters/drone.gd" id="1_u82xt"]
+[ext_resource type="Shader" uid="uid://lfp26c8535bk" path="res://Scenes/Shaders/flash.tres" id="2_agohi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qngn8"]
+resource_local_to_scene = true
+shader = ExtResource("2_agohi")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u82xt"]
+atlas = ExtResource("1_kpcib")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agohi"]
+atlas = ExtResource("1_kpcib")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y6rt"]
+atlas = ExtResource("1_kpcib")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gry1w"]
+atlas = ExtResource("1_kpcib")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mrfd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u82xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agohi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y6rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gry1w")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mrfd"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvwv6"]
+radius = 101.31634
+
+[node name="Drone" type="CharacterBody2D" unique_id=1391027941]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_u82xt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1609971105]
+material = SubResource("ShaderMaterial_qngn8")
+sprite_frames = SubResource("SpriteFrames_1mrfd")
+autoplay = "default"
+frame = 1
+frame_progress = 0.43122742
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=624277366]
+shape = SubResource("CircleShape2D_1mrfd")
+
+[node name="PlayerDetectionArea2D" type="Area2D" parent="." unique_id=391468966]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea2D" unique_id=182275535]
+shape = SubResource("CircleShape2D_hvwv6")
+
+[connection signal="body_entered" from="PlayerDetectionArea2D" to="." method="_on_player_detection_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea2D" to="." method="_on_player_detection_area_2d_body_exited"]
