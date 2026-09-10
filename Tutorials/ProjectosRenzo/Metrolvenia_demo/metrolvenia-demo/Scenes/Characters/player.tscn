@@ -107,3 +107,9 @@ zoom = Vector2(3, 3)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2047035863]
 libraries/ = SubResource("AnimationLibrary_khnq4")
+
+[node name="Timer" type="Node" parent="." unique_id=1948169066]
+
+[node name="ReloadTimer" type="Timer" parent="Timer" unique_id=1533323709]
+wait_time = 0.5
+one_shot = true

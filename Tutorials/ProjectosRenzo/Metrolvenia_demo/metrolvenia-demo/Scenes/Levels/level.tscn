@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djh3khl33k11"]
 
 [ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://graphics/tilesets/subway.png" id="1_f1n8c"]
+[ext_resource type="Script" uid="uid://tqgb6tio0scc" path="res://Scenes/Levels/level.gd" id="1_yjxcc"]
 [ext_resource type="PackedScene" uid="uid://da5mlm4gym12d" path="res://Scenes/Characters/player.tscn" id="2_7x7pb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7x7pb"]
@@ -471,6 +472,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_7x7pb")
 
 [node name="Level" type="Node2D" unique_id=1555055962]
+script = ExtResource("1_yjxcc")
 
 [node name="Layers" type="Node2D" parent="." unique_id=922104211]
 
@@ -480,3 +482,7 @@ tile_set = SubResource("TileSet_1mrfd")
 [node name="Entities" type="Node2D" parent="." unique_id=809746367]
 
 [node name="Player" parent="Entities" unique_id=10656785 instance=ExtResource("2_7x7pb")]
+
+[node name="Bullets" type="Node2D" parent="." unique_id=457342579]
+
+[connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]
